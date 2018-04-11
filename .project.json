@@ -1,0 +1,88 @@
+{
+  "projectType": [
+    "sap.watt.uitools.ide.fiori",
+    "com.watt.common.builder.sapui5clientbuild",
+    "com.sap.webide.hybrid.cordova"
+  ],
+  "build": {
+    "targetFolder": "dist",
+    "sourceFolder": "webapp",
+    "excludedFolders": [
+      "test"
+    ],
+    "excludedFiles": [
+      "test.html"
+    ],
+    "buildRequired": true
+  },
+  "dataBinding": {
+    "/webapp/view/App.view.xml": {
+      "entitySet": "UNBINDKEY"
+    },
+    "/webapp/view/NotFound.view.xml": {
+      "entitySet": "UNBINDKEY"
+    },
+    "/webapp/view/DetailObjectNotFound.view.xml": {
+      "entitySet": "UNBINDKEY"
+    },
+    "/webapp/view/DetailNoObjectsAvailable.view.xml": {
+      "entitySet": "UNBINDKEY"
+    },
+    "/webapp/view/Master.view.xml": {
+      "entitySet": "Projects"
+    },
+    "/webapp/view/Detail.view.xml": {
+      "entitySet": "Projects"
+    }
+  },
+  "generation": [
+    {
+      "templateId": "sap.ui.ui5-template-plugin.2masterdetail",
+      "templateVersion": "1.52.6",
+      "dateTimeStamp": "Wed, 11 Apr 2018 13:01:13 GMT"
+    }
+  ],
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  },
+  "mockpreview": {
+    "mockUri": "/ERTODataAzureV1/ERT_SL_ODataDB.svc",
+    "metadataFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "basevalidator": {
+    "services": {
+      "xml": "fioriXmlAnalysis",
+      "js": "fioriJsValidator"
+    }
+  },
+  "codeCheckingTriggers": {
+    "notifyBeforePush": true,
+    "notifyBeforePushLevel": "Error",
+    "blockPush": false,
+    "blockPushLevel": "Error"
+  },
+  "hybrid": {
+    "backendDestination": "ERTODataAzureV1",
+    "hatVersion": "1.28.9",
+    "appNamespace": "ertsample1",
+    "oDataConfigs": [
+      {
+        "hybridOdata": {
+          "name": "mainService",
+          "serviceUrl": ""
+        },
+        "originOdata": {
+          "name": "mainService",
+          "serviceUrl": "/ERTODataAzureV1/ERT_SL_ODataDB.svc/"
+        }
+      }
+    ]
+  }
+}

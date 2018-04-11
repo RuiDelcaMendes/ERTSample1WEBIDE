@@ -1,0 +1,63 @@
+<mvc:View
+	controllerName="ertsample1.ERTSample1.controller.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic">
+
+	<semantic:DetailPage
+		id="page"
+		navButtonPress="onNavBack"
+		showNavButton="{device>/system/phone}"
+		title="{i18n>detailTitle}"
+		busy="{detailView>/busy}"
+		busyIndicatorDelay="{detailView>/delay}">
+
+		<semantic:content>
+			<ObjectHeader
+				id="objectHeader"
+				title="{Name}"
+>
+			</ObjectHeader>
+			<Table
+				id="lineItemsList"
+				width="auto"
+				items="{ProjectLineDetails}"
+				updateFinished="onListUpdateFinished"
+				noDataText="{i18n>detailLineItemTableNoDataText}"
+				busyIndicatorDelay="{detailView>/lineItemTableDelay}"
+				class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<Toolbar id="lineItemsToolbar">
+						<Title
+							id="lineItemsHeader"
+							text="{detailView>/lineItemListTitle}"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="{i18n>detailLineItemTableIDColumn}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<ObjectIdentifier
+								title="{Name}"
+								text="{Id}"/>
+							<ObjectNumber
+/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction
+				id="shareEmail"
+				press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+
+	</semantic:DetailPage>
+
+</mvc:View>
